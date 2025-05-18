@@ -1,5 +1,5 @@
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   margin: 0;
   padding: 2rem;
   background: #1e1e2f;
@@ -99,4 +99,23 @@ body {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45a049;
 }
