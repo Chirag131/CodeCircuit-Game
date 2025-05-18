@@ -97,3 +97,39 @@ button:hover {
 .container {
   animation: flicker 4s infinite alternate ease-in-out;
 }
+@media (max-width: 600px) {
+  .container {
+    max-width: 90vw;
+    padding: 15px;
+  }
+
+  .click-box {
+    width: 90vw;
+    height: 90vw;
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .stats {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .click-box {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+
+  .stats {
+    font-size: 16px;
+  }
+}

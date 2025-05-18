@@ -147,3 +147,49 @@ button:hover {
     margin: 10px 0 0 0;
   }
 }
+
+@media (max-width: 900px) {
+  .game-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .dice-box img {
+    width: 130px;
+  }
+  button {
+    padding: 10px 22px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 15px 10px;
+  }
+  .main-container {
+    padding: 20px 15px 25px 15px;
+  }
+  h1#mode-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .dice-box img {
+    width: 110px;
+  }
+  button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+    margin: 8px 0 0 0;
+  }
+  .history-box ul,
+  .leaderboard-box ol {
+    max-height: 150px;
+    font-size: 1rem;
+  }
+}
+

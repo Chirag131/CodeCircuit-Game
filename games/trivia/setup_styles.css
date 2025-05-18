@@ -250,3 +250,74 @@ section {
 .back-button:hover {
   background-color: #45a049;
 }
+
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem 1.8rem;
+    max-width: 90vw;
+    width: auto;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    max-width: 100%;
+    margin: 1rem auto 0;
+  }
+
+  .category-box {
+    font-size: 1.1rem;
+    max-width: 160px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .difficulty-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    margin: 0.4rem;
+  }
+
+  #start-btn {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+
+  /* Back button smaller and closer to edges */
+  .back-button {
+    top: 12px;
+    left: 12px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 350px) {
+  .category-box {
+    max-width: 130px;
+    font-size: 1rem;
+  }
+
+  .difficulty-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  #start-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+  }
+
+  .back-button {
+    top: 8px;
+    left: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}

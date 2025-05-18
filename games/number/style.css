@@ -138,3 +138,27 @@ body.dark button:hover {
   background-color: #45a049;
 }
 
+@media (max-width: 480px) {
+  .container {
+    margin: 15px;
+    padding: 1rem;
+    max-width: 90vw;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .back-button {
+    top: 12px;
+    left: 12px;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}

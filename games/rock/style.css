@@ -311,3 +311,68 @@ kbd {
 .back-button:hover {
   background-color: #45a049;
 }
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    max-width: 95vw;
+  }
+
+  .game-layout {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .scoreboard,
+  .history-panel,
+  .game-area {
+    flex: unset;
+    width: 100%;
+  }
+
+  .buttons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .buttons button {
+    width: 80px;
+    height: 80px;
+    font-size: 0.9rem;
+  }
+
+  .rounds-container {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .cube {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .toggle-container {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 10px 30px;
+  }
+
+  .instructions-container {
+    max-width: 90vw;
+    padding: 12px 15px;
+  }
+
+  .back-button {
+    top: 12px;
+    left: 12px;
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}

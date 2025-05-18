@@ -94,3 +94,60 @@ footer {
   background-color: #45a049;
 }
 
+@media (max-width: 600px) {
+  .setup-container {
+    padding: 30px 25px;
+    max-width: 90vw;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .instructions {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .mode-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mode-buttons button {
+    width: 100%;
+    min-width: unset;
+    padding: 14px 0;
+    font-size: 1.1rem;
+  }
+
+  footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+  }
+
+  .back-button {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .instructions {
+    font-size: 0.9rem;
+  }
+
+  .mode-buttons button {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+
+  .back-button {
+    padding: 7px 12px;
+    font-size: 13px;
+  }
+}
