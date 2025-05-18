@@ -1,0 +1,99 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  text-align: center;
+  padding: 20px;
+}
+.container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.stats {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.upgrades button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.story-box {
+  background-color: #fff8dc;
+  border: 1px solid #d4af37;
+  color: #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-style: italic;
+  display: none;
+  border-radius: 6px;
+}
+.click-box {
+  width: 300px;
+  height: 300px;
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  font-size: 24px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.click-box:active {
+  transform: scale(0.95);
+}
+/* 1. Click box pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px 3px rgba(255, 223, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgba(255, 223, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 10px 3px rgba(255, 223, 0, 0.6);
+  }
+}
+.click-box.pulse {
+  animation: pulse 0.6s ease;
+}
+
+/* 2. Upgrade button hover glow */
+button:hover {
+  box-shadow: 0 0 10px 3px #d4af37;
+  transition: box-shadow 0.3s ease;
+}
+
+/* 3. Gold counter shimmer */
+@keyframes shimmer {
+  0% { color: #b8860b; }
+  50% { color: #fff8dc; }
+  100% { color: #b8860b; }
+}
+#clicks.shimmer {
+  animation: shimmer 1s ease;
+}
+
+/* 4. Background torch flicker on container */
+@keyframes flicker {
+  0%, 100% { box-shadow: 0 0 20px 5px #ffd700; }
+  50% { box-shadow: 0 0 30px 10px #ffbf00; }
+}
+.container {
+  animation: flicker 4s infinite alternate ease-in-out;
+}

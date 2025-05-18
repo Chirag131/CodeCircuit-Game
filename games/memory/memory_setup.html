@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Setup Game</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Minimal inline styling for demonstration */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        margin: 0;
+      }
+      .setup-container {
+        background: rgba(0, 0, 0, 0.4);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        width: 300px;
+      }
+      h1,
+      h2 {
+        margin-bottom: 20px;
+      }
+      .difficulty-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+      .difficulty-box {
+        background: #5b21b6;
+        padding: 20px;
+        border-radius: 15px;
+        cursor: pointer;
+        user-select: none;
+        font-weight: 700;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .difficulty-box:hover {
+        background-color: #7c3aed;
+        transform: scale(1.05);
+      }
+
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+      }
+
+      .back-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="setup-container">
+      <h1>Memory Match Game Setup</h1>
+
+      <a href="../../games.html" class="back-button">← Back</a>
+
+      <h2>Select Difficulty</h2>
+      <div class="difficulty-container">
+        <div class="difficulty-box" onclick="startGame('easy')">Easy (4x4)</div>
+        <div class="difficulty-box" onclick="startGame('medium')">
+          Medium (6x6)
+        </div>
+        <div class="difficulty-box" onclick="startGame('hard')">Hard (8x8)</div>
+        <div class="difficulty-box" onclick="startGame('ultra')">
+          Ultra (10x10)
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function startGame(difficulty) {
+        localStorage.setItem("memory_game_difficulty", difficulty);
+        window.location.href = "memory.html"; // or your main game page
+      }
+    </script>
+  </body>
+</html>

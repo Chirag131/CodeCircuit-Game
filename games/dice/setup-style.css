@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  font-family: 'Poppins', sans-serif;
+  color: #f0f0f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.setup-container {
+  background: #1e1e2f;
+  padding: 40px 50px;
+  border-radius: 25px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 8px #6a11cb;
+}
+
+.instructions {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #d4d4ff;
+  margin-bottom: 40px;
+  text-shadow: 0 0 6px #4c3d94;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.mode-buttons button {
+  background: #7c59f7;
+  color: white;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(124, 89, 247, 0.6);
+  transition: background 0.3s ease, transform 0.15s ease;
+  min-width: 140px;
+}
+
+.mode-buttons button:hover {
+  background: #5e42b8;
+  transform: translateY(-3px);
+}
+
+footer {
+  margin-top: 45px;
+  font-size: 0.9rem;
+  color: #9999bb;
+  text-shadow: none;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}
+

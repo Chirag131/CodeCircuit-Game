@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Idle Clicker - Kingdom Ascendancy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://www.transparenttextures.com/patterns/old-mathematics.png') repeat;
+      font-family: 'MedievalSharp', cursive;
+      color: #2c1b0c;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      background: #f8f1e5;
+      border: 6px double #3e2e1e;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .stats, .upgrades {
+      margin: 20px 0;
+    }
+
+    .click-box {
+      background: #c9a66b;
+      padding: 40px;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 1.5em;
+      border: 4px solid #7c5c3b;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: inset 0 0 5px #654321;
+    }
+
+    button {
+      background: #8b6b45;
+      color: white;
+      border: 2px solid #5e442a;
+      padding: 10px 20px;
+      font-size: 1em;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px #3c2c1f;
+    }
+
+    button:hover {
+      background: #a48157;
+    }
+
+    .story-box {
+      background: #fdf7ee;
+      border: 2px dashed #a0907c;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Kingdom Clicker: Rise of the Realm</h1>
+    <div id="story-box" class="story-box">
+      A humble peasant begins building an empire... one click at a time.
+    </div>
+    <div class="stats">
+      <div>Gold: <span id="clicks">0</span></div>
+      <div>Gold per second: <span id="cps">0</span></div>
+    </div>
+    <div id="click-box" class="click-box">Forge Gold</div>
+
+    <h2>Guild Upgrades</h2>
+    <div class="upgrades">
+      <button id="upgrade-click-power">Sharpen Tools (Cost: <span id="cost-click-power">10</span> Gold)</button>
+      <button id="buy-auto-clicker">Hire Miners (Cost: <span id="cost-auto-clicker">50</span> Gold)</button>
+    </div>
+
+    <h2>Save / Load Scrolls</h2>
+    <button id="save-btn">Inscribe Save Scroll</button>
+    <button id="load-btn">Summon Save Scroll</button>
+  </div>
+  <audio id="sound-forge" src="sounds/forge_hammer.mp3" preload="auto"></audio>
+  <audio id="sound-coins" src="sounds/coins_clink.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Select a Game | Game Vibes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/setup.css" />
+</head>
+<body class="games-page">
+  <h1 class="title">Choose Your Game</h1>
+  <div class="games-grid">
+    <div class="game-card" onclick="goToGame('rock')">
+      <div class="game-card-inner">
+        <div class="game-card-front">✊📄✂️<p>Rock Paper Scissors</p></div>
+        <div class="game-card-back">
+          <p>Beat the computer by choosing rock, paper, or scissors. A classic game of chance and strategy!</p>
+        </div>
+      </div>
+    </div>
+    <div class="game-card" onclick="goToGame('number')">
+      <div class="game-card-inner">
+        <div class="game-card-front">🔢<p>Number Guessing</p></div>
+        <div class="game-card-back">
+          <p>Guess the secret number in the fewest attempts. Use your logic and luck!</p>
+        </div>
+      </div>
+    </div>
+    <div class="game-card" onclick="goToGame('dice')">
+      <div class="game-card-inner">
+        <div class="game-card-front">🎲<p>Dice Roller</p></div>
+        <div class="game-card-back">
+          <p>Roll the dice and let fate decide. Great for quick fun and randomness!</p>
+        </div>
+      </div>
+    </div>
+    <div class="game-card" onclick="goToGame('memory')">
+      <div class="game-card-inner">
+        <div class="game-card-front">🧠🃏<p>Memory Matching</p></div>
+        <div class="game-card-back">
+          <p>Flip cards and match pairs as fast as you can to test your memory!</p>
+        </div>
+      </div>
+    </div>
+    <div class="game-card" onclick="goToGame('trivia')">
+      <div class="game-card-inner">
+        <div class="game-card-front">❓📚<p>Trivia Quiz</p></div>
+        <div class="game-card-back">
+          <p>Answer trivia questions across fun topics to test your knowledge!</p>
+        </div>
+      </div>
+    </div>
+    <div class="game-card" onclick="goToGame('clicker')">
+      <div class="game-card-inner">
+        <div class="game-card-front">🖱️💰<p>Idle Clicker</p></div>
+        <div class="game-card-back">
+          <p>Click your way to riches. Upgrade, automate, and dominate!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,606 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto+Mono&display=swap');
+
+/* Base & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fdfdfd;
+  color: #333;
+  line-height: 1.6;
+  transition: background 0.4s, color 0.4s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #7358e0;
+  color: #fff;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #5a42b9;
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+/* Dark Mode Toggle Icon */
+#dark-mode-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* Quiz Container */
+#quiz-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Scoreboard & Timer */
+#scoreboard, #timer {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  font-family: 'Roboto Mono', monospace;
+}
+
+#timer {
+  font-weight: bold;
+}
+
+/* Question */
+#question-container {
+  margin-top: 2rem;
+}
+
+#question {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+/* Options */
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-btn {
+  background: #eee;
+  color: #222;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.15s;
+  cursor: pointer;
+}
+
+.option-btn:hover {
+  background: #ddd;
+  transform: scale(1.02);
+}
+
+.option-btn.correct {
+  background: #4caf50;
+  color: #fff;
+}
+
+.option-btn.wrong {
+  background: #f44336;
+  color: #fff;
+}
+
+.option-btn.disabled-option {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Lifelines */
+#lifelines {
+  margin: 2rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lifeline-btn {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.3rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.lifeline-btn:hover {
+  background: #fb8c00;
+}
+
+.lifeline-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Next Button */
+#next-btn {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.9rem 2.2rem;
+  background-color: #7358e0;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#next-btn:hover {
+  background-color: #5f47c6;
+}
+
+/* Summary */
+#summary {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+}
+
+#summary h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+#summary p {
+  font-size: 1.2rem;
+}
+
+#summary button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: #26a69a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#summary button:hover {
+  background-color: #1e857e;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: #1c1c1c;
+  color: #e0e0e0;
+}
+
+.dark-mode #quiz-container,
+.dark-mode #summary {
+  background: #292929;
+  color: #ddd;
+}
+
+.dark-mode .option-btn {
+  background: #444;
+  color: #ddd;
+}
+
+.dark-mode .option-btn:hover {
+  background: #555;
+}
+
+.dark-mode .option-btn.correct {
+  background: #2e7d32;
+}
+
+.dark-mode .option-btn.wrong {
+  background: #c62828;
+}
+
+.dark-mode .lifeline-btn {
+  background: #777;
+}
+
+.dark-mode .lifeline-btn:hover {
+  background: #999;
+}
+
+.dark-mode #next-btn {
+  background-color: #7c62e6;
+}
+
+.dark-mode #next-btn:hover {
+  background-color: #654bc7;
+}
+
+.dark-mode #summary button {
+  background-color: #26a69a;
+}
+
+.dark-mode #summary button:hover {
+  background-color: #1e857e;
+}
+/* Options Container - Horizontal Grid */
+#options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-items: center;
+}
+
+/* Square Option Buttons */
+.option-btn {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* makes the buttons perfect squares */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #eee;
+  color: #222;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.15s;
+}
+
+.option-btn:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
+
+/* Feedback Colors */
+.option-btn.correct {
+  background: #4caf50;
+  color: #fff;
+}
+
+.option-btn.wrong {
+  background: #f44336;
+  color: #fff;
+}
+
+.option-btn.disabled-option {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Dark mode adjustments */
+.dark-mode .option-btn {
+  background: #444;
+  color: #ddd;
+}
+
+.dark-mode .option-btn:hover {
+  background: #555;
+}
+
+.dark-mode .option-btn.correct {
+  background: #2e7d32;
+}
+
+.dark-mode .option-btn.wrong {
+  background: #c62828;
+}
+#options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-items: center;
+}
+
+@media (max-width: 500px) {
+  #options {
+    grid-template-columns: 1fr;
+  }
+}
+/* Fade in quiz container on load */
+#quiz-container {
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate question text on change */
+#question {
+  animation: pulseText 0.8s ease;
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    color: inherit;
+    transform: scale(1);
+  }
+  50% {
+    color: #7358e0;
+    transform: scale(1.05);
+  }
+}
+
+/* Animate option buttons on hover and selection */
+.option-btn {
+  transition: background 0.3s, transform 0.15s, box-shadow 0.3s ease;
+}
+
+.option-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(115, 88, 224, 0.5);
+}
+
+.option-btn.correct {
+  animation: correctGlow 1s ease forwards;
+}
+
+.option-btn.wrong {
+  animation: wrongShake 0.6s ease;
+}
+
+/* Correct answer glow */
+@keyframes correctGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(76, 175, 80, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+/* Wrong answer shake */
+@keyframes wrongShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  75% {
+    transform: translateX(-6px);
+  }
+}
+
+/* Lifeline buttons hover */
+.lifeline-btn {
+  transition: background 0.3s, transform 0.2s;
+}
+
+.lifeline-btn:hover:not(:disabled) {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.6);
+}
+
+/* Next button hover */
+#next-btn {
+  transition: background 0.3s, transform 0.2s;
+}
+
+#next-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(115, 88, 224, 0.7);
+}
+
+/* Score increment animation */
+#score {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.score-update {
+  animation: scorePop 0.4s ease forwards;
+}
+
+@keyframes scorePop {
+  0% {
+    transform: scale(1);
+    color: inherit;
+  }
+  50% {
+    transform: scale(1.4);
+    color: #4caf50;
+  }
+  100% {
+    transform: scale(1);
+    color: inherit;
+  }
+}
+#summary {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  background: #f4f3ff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(115, 88, 224, 0.3);
+  text-align: center;
+  color: #4a3dbf;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInScale 0.6s ease forwards;
+}
+
+#summary h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+#summary p {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+#summary .last-score-info {
+  font-size: 1.1rem;
+  color: #6e5ecf;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+#summary button {
+  margin-top: 1.5rem;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  background-color: #7358e0;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(115, 88, 224, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+#summary button:hover {
+  background-color: #5a42b9;
+}
+
+/* Animations */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+header {
+  background: #7358e0;
+  color: #fff;
+  padding: 1.2rem 2rem;
+  position: relative;
+  border-bottom: 4px solid #5a42b9;
+  display: flex;
+  justify-content: center; /* center heading */
+  align-items: center;
+}
+
+.back-btn {
+  position: absolute;
+  top: 0.8rem;    /* adjust vertical distance from top */
+  left: 1rem;     /* adjust horizontal distance from left */
+  background-color: #7358e0;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(115, 88, 224, 0.4);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.back-btn:hover {
+  background-color: #5a42b9;
+  transform: translateX(-4px);
+}
+
+.back-btn:active {
+  transform: translateX(-2px);
+}
+
+.back-btn::before {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-right: 0.3rem;
+}
+
+
+.summary-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Use existing button styles or unify them */
+.action-btn, .back-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 10px rgba(115, 88, 224, 0.4);
+}
+
+/* Restart button style */
+.action-btn {
+  background-color: #7358e0;
+  color: white;
+}
+
+.action-btn:hover {
+  background-color: #5a42b9;
+  transform: translateY(-2px);
+}
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kingdom Clicker - Setup</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: url("https://www.transparenttextures.com/patterns/old-mathematics.png")
+          repeat;
+        font-family: "MedievalSharp", cursive;
+        color: #2c1b0c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .setup-container {
+        background: #f8f1e5;
+        border: 6px double #3e2e1e;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        padding: 30px 40px;
+        text-align: center;
+      }
+      h1 {
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+      p {
+        font-style: italic;
+        line-height: 1.5;
+        margin: 20px 0;
+      }
+      button {
+        background: #8b6b45;
+        color: white;
+        border: 2px solid #5e442a;
+        padding: 15px 35px;
+        font-size: 1.2em;
+        margin: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 2px 2px 6px #3c2c1f;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background: #a48157;
+      }
+
+      .back-button {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        text-decoration: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s ease;
+      }
+
+      .back-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="setup-container">
+      <h1>Kingdom Clicker</h1>
+
+      <a href="../../games.html" class="back-button">← Back</a>
+
+      <p>
+        In the days of yore, a modest villager discovered the art of wealth
+        through tireless effort.<br />
+        Click to forge gold, upgrade your guild, and build a kingdom that will
+        echo through the ages.<br />
+        Will you rise to become the realm's greatest lord or lady?
+      </p>
+      <button onclick="startNewGame()">Begin Your Quest</button>
+      <button onclick="loadGame()">Recall Your Progress</button>
+    </div>
+
+    <script>
+      function startNewGame() {
+        localStorage.removeItem("idleClickerSave");
+        window.location.href = "clicker.html";
+      }
+      function loadGame() {
+        window.location.href = "clicker.html";
+      }
+    </script>
+  </body>
+</html>

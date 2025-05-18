@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trivia Quiz Setup</title>
+  <link rel="stylesheet" href="setup_styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Trivia Quiz Setup</h1>
+
+    <a href="../../games.html" class="back-button">← Back</a>
+
+    <section>
+      <h2>Instructions</h2>
+      <p>
+        Welcome to the Trivia Quiz! Select your preferred category and difficulty level, then start the quiz.
+        You will have limited time for each question and can use lifelines to help you along the way.
+      </p>
+    </section>
+
+    <section>
+      <h2>Select Category</h2>
+      <div id="categories" class="grid-container">
+        <!-- Categories populated by JS -->
+      </div>
+    </section>
+
+    <section>
+      <h2>Select Difficulty</h2>
+      <div id="difficulties" class="difficulty-container">
+        <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+        <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+        <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+      </div>
+    </section>
+
+    <button id="start-btn" disabled>Start Quiz</button>
+  </div>
+
+  <script>
+    // Define categories - should match those in data.js
+    const categories = [
+      { key: 'math', label: 'Math' },
+      { key: 'science', label: 'Science' },
+      { key: 'history', label: 'History' },
+      { key: 'general', label: 'General Knowledge' },
+      { key: 'sports', label: 'Sports' },
+      { key: 'literature', label: 'Literature' }
+    ];
+
+    const categoriesContainer = document.getElementById('categories');
+    const difficultiesContainer = document.getElementById('difficulties');
+    const startBtn = document.getElementById('start-btn');
+
+    let selectedCategory = null;
+    let selectedDifficulty = null;
+
+    // Populate categories grid
+    categories.forEach(cat => {
+      const box = document.createElement('div');
+      box.classList.add('category-box');
+      box.textContent = cat.label;
+      box.dataset.key = cat.key;
+
+      box.addEventListener('click', () => {
+        // Remove 'selected' from all
+        document.querySelectorAll('.category-box').forEach(el => el.classList.remove('selected'));
+        box.classList.add('selected');
+        selectedCategory = cat.key;
+        checkReadyToStart();
+      });
+
+      categoriesContainer.appendChild(box);
+    });
+
+    // Difficulty buttons
+    difficultiesContainer.querySelectorAll('.difficulty-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        difficultiesContainer.querySelectorAll('.difficulty-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedDifficulty = btn.dataset.difficulty;
+        checkReadyToStart();
+      });
+    });
+
+    function checkReadyToStart() {
+      startBtn.disabled = !(selectedCategory && selectedDifficulty);
+    }
+
+    startBtn.addEventListener('click', () => {
+      if (!selectedCategory || !selectedDifficulty) return;
+
+      // Redirect to trivia.html with params
+      const url = `trivia.html?category=${encodeURIComponent(selectedCategory)}&difficulty=${encodeURIComponent(selectedDifficulty)}`;
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>

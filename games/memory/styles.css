@@ -1,0 +1,288 @@
+/* General body styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Setup page container */
+.setup-container {
+  max-width: 400px;
+  background: rgba(44, 62, 80, 0.85); /* #2c3e50 with opacity */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  text-align: center;
+  color: #ecf0f1;
+}
+
+/* Setup headings */
+.setup-container h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #f39c12;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px #d35400;
+}
+
+.setup-container h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Difficulty buttons */
+.difficulty-box {
+  background-color: #34495e;
+  border-radius: 12px;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  color: #ecf0f1;
+  margin-bottom: 15px;
+}
+
+.difficulty-box:hover {
+  background-color: #f39c12;
+  color: #2c3e50;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #f39c12;
+}
+
+/* Main game title */
+h1 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #f39c12;
+  text-shadow: 1px 1px 4px #d35400;
+}
+
+/* Info bar */
+#info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#info span {
+  background: rgba(52, 73, 94, 0.9);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  min-width: 80px;
+  text-align: center;
+  color: #ecf0f1;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+/* Buttons in info */
+#info button {
+  padding: 8px 15px;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 10px;
+  color: #2c3e50;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(243,156,18,0.6);
+  transition: background-color 0.3s ease;
+}
+
+#info button:hover {
+  background-color: #d35400;
+  color: white;
+  box-shadow: 0 0 20px #d35400;
+}
+
+/* Controls section */
+#controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#controls button {
+  background-color: #34495e;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  color: #ecf0f1;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+#controls button:hover:not(:disabled) {
+  background-color: #f39c12;
+  color: #2c3e50;
+  box-shadow: 0 0 12px #f39c12;
+}
+
+#controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Board grid */
+#board {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Card styles */
+.card {
+  width: 80px;
+  height: 80px;
+  background-color: #34495e;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  cursor: pointer;
+  user-select: none;
+  color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card.flipped {
+  background-color: #f39c12;
+  color: #2c3e50;
+  cursor: default;
+  box-shadow: 0 0 15px #f39c12;
+}
+
+.card.matched {
+  background-color: #27ae60;
+  color: #ecf0f1;
+  cursor: default;
+  box-shadow: 0 0 15px #2ecc71;
+}
+
+/* Powerup message */
+#powerupMessage {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f39c12;
+  color: #2c3e50;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #f39c12;
+  display: none;
+  z-index: 1000;
+}
+
+/* Pause popup */
+#pausePopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(44, 62, 80, 0.95);
+  border-radius: 15px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  color: #ecf0f1;
+  text-align: center;
+  z-index: 1500;
+  min-width: 280px;
+}
+
+#pausePopup h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #f39c12;
+  text-shadow: 1px 1px 4px #d35400;
+}
+
+#pausePopup button {
+  background-color: #f39c12;
+  border: none;
+  border-radius: 10px;
+  color: #2c3e50;
+  font-weight: 700;
+  padding: 10px 25px;
+  margin: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(243,156,18,0.6);
+  transition: background-color 0.3s ease;
+}
+
+#pausePopup button:hover {
+  background-color: #d35400;
+  color: white;
+  box-shadow: 0 0 20px #d35400;
+}
+
+#leaderboard {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  max-width: 300px;
+  margin: 0;
+  padding: 20px;                /* Add space inside */
+  background: rgba(44, 62, 80, 0.95); /* Slightly more solid background */
+  border: 2px solid #f39c12;   /* Gold colored border */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(243, 156, 18, 0.5);
+  z-index: 1000;
+}
+
+
+#leaderboard h3 {
+  margin-top: 0;
+  color: #f39c12;
+  text-shadow: 1px 1px 3px #d35400;
+  font-weight: 700;
+}
+
+#leaderboard ol {
+  padding-left: 20px;
+}
+
+#leaderboard li {
+  margin-bottom: 8px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  #board {
+    grid-template-columns: repeat(4, 70px) !important;
+    gap: 8px;
+  }
+
+  .card {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  #info, #controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+

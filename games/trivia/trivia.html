@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trivia Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="quiz-container">
+      <header>
+        <h1>Trivia Quiz</h1>
+        <button id="dark-mode-toggle">🌙</button>
+      </header>
+
+      <div id="scoreboard">Score: <span id="score">0</span></div>
+
+      <div id="timer">Time: 20s</div>
+
+      <div id="question-container">
+        <div id="question">Question text</div>
+        <div id="options"></div>
+        <button id="back-to-setup" class="back-btn">← Back</button>
+
+      </div>
+
+      <div id="lifelines">
+        <button id="lifeline-50" class="lifeline-btn">50:50</button>
+        <button id="lifeline-skip" class="lifeline-btn">Skip</button>
+        <button id="lifeline-extra" class="lifeline-btn">Extra Time</button>
+      </div>
+
+      <button id="next-btn" style="display: none">Next Question</button>
+    </div>
+
+    <div id="summary" style="display: none"></div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

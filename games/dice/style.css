@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #f0f0f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.main-container {
+  max-width: 1100px;
+  width: 100%;
+  background: #1e1e2f;
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+h1#mode-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px #4f2fc3;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.dice-box, .score-box, .history-box, .leaderboard-box {
+  background: #2a2a45;
+  padding: 25px 20px;
+  border-radius: 18px;
+  box-shadow:
+    inset 0 0 10px rgba(255, 255, 255, 0.1),
+    0 6px 15px rgba(40, 20, 100, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dice-box:hover, .score-box:hover, .history-box:hover, .leaderboard-box:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    inset 0 0 15px rgba(255, 255, 255, 0.2),
+    0 10px 20px rgba(70, 40, 150, 0.7);
+}
+
+.dice-box img {
+  width: 160px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  filter: drop-shadow(0 0 8px #7c59f7);
+}
+
+.dice-box img.animate {
+  transform: rotate(720deg);
+}
+
+#result {
+  margin-top: 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #d6d6ff;
+  text-shadow: 0 0 5px #a38fff;
+  min-height: 40px;
+}
+
+.score-box p {
+  margin: 15px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #b1b1f7;
+  text-shadow: 0 0 3px #5e53d6;
+}
+
+button {
+  margin: 12px 8px 0 8px;
+  padding: 12px 28px;
+  background: #7c59f7;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(124, 89, 247, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+}
+
+button:hover {
+  background: #6244c7;
+  box-shadow: 0 7px 20px rgba(98, 68, 199, 0.8);
+  transform: translateY(-2px);
+}
+
+.history-box ul,
+.leaderboard-box ol {
+  list-style: none;
+  margin-top: 15px;
+  padding-left: 0;
+  font-size: 1.1rem;
+  color: #bfbfff;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.history-box li,
+.leaderboard-box li {
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(124, 89, 247, 0.15);
+  box-shadow: inset 0 0 5px rgba(124, 89, 247, 0.3);
+  transition: background 0.3s ease;
+}
+
+.history-box li:hover,
+.leaderboard-box li:hover {
+  background: rgba(124, 89, 247, 0.35);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 10px;
+  }
+  .main-container {
+    padding: 20px 20px 30px 20px;
+  }
+  h1#mode-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  button {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+}

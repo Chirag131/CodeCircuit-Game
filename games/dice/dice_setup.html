@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dice Game Setup</title>
+  <link rel="stylesheet" href="setup-style.css" />
+</head>
+<body>
+  <div class="setup-container">
+    <h1>🎲 Welcome to Dice Roller</h1>
+
+    <a href="../../games.html" class="back-button">← Back</a>
+
+    <p class="instructions">
+      Choose your game mode below.<br />
+      <strong>Free Mode:</strong> Roll as many times as you want.<br />
+      <strong>Game Mode:</strong> Race to reach exactly 100 points with the fewest rolls!
+    </p>
+
+    <div class="mode-buttons">
+      <button id="free-mode">Free Mode</button>
+      <button id="game-mode">Game Mode</button>
+    </div>
+
+    
+  </div>
+
+  <script>
+    document.getElementById('free-mode').addEventListener('click', () => {
+      localStorage.setItem('diceMode', 'free');
+      window.location.href = 'dice.html';
+    });
+    document.getElementById('game-mode').addEventListener('click', () => {
+      localStorage.setItem('diceMode', 'game');
+      window.location.href = 'dice.html';
+    });
+  </script>
+</body>
+</html>

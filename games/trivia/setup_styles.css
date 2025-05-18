@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+:root {
+  --bg-color: #f5f0ff;
+  --text-color: #2c2c2c;
+  --primary-color: #7c3aed;
+  --accent-color: #ff7b72;
+  --selected-bg: #f472b6;
+  --btn-bg: #7c3aed;
+  --btn-hover: #5b21b6;
+  --font-family: 'Rubik', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 650px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+section {
+  margin-bottom: 1.5rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.category-box {
+  padding: 1rem;
+  background-color: #efeafd;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-weight: 500;
+  border: 2px solid transparent;
+}
+
+.category-box:hover {
+  background-color: var(--accent-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.category-box.selected {
+  background-color: var(--selected-bg);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.difficulty-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.difficulty-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.difficulty-btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.difficulty-btn.selected {
+  background-color: var(--selected-bg);
+  color: #fff;
+}
+
+#start-btn {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.75rem 2rem;
+  background-color: var(--btn-bg);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-btn:hover:enabled {
+  background-color: var(--btn-hover);
+}
+
+#start-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 2rem;
+  max-width: 500px; /* limits overall container width */
+  margin: 1.5rem auto 0;
+  justify-items: center;
+}
+
+.category-box {
+  background-color: #7358e0;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 14px;
+  user-select: none;
+  width: 100%;
+  max-width: 220px;  /* max width */
+  aspect-ratio: 1 / 1; /* makes it a perfect square */
+  transition: background-color 0.3s;
+}
+
+.category-box:hover {
+  background-color: #5a42b9;
+}
+
+.category-box.selected {
+  background-color: #4a32a0;
+  box-shadow: 0 0 12px rgba(74, 50, 160, 0.7);
+}
+/* Animate category boxes on hover and selection */
+.category-box {
+  /* existing styles... */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-box:hover {
+  background-color: #5a42b9;
+  transform: scale(1.05);
+}
+
+.category-box.selected {
+  background-color: #4a32a0;
+  box-shadow: 0 0 12px rgba(74, 50, 160, 0.7);
+  transform: scale(1.1);
+}
+
+/* Animate difficulty buttons */
+.difficulty-btn {
+  background-color: #7358e0;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  margin: 0.5rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.difficulty-btn:hover {
+  background-color: #5a42b9;
+  transform: scale(1.05);
+}
+
+.difficulty-btn.selected {
+  background-color: #4a32a0;
+  box-shadow: 0 0 10px rgba(74, 50, 160, 0.6);
+  transform: scale(1.1);
+}
+
+/* Animate start button */
+#start-btn {
+  background-color: #7358e0;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#start-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#start-btn:not(:disabled):hover {
+  background-color: #5a42b9;
+  transform: scale(1.05);
+}
+
+/* Optional: Add fade-in animation on page load */
+.container {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards ease-in;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,108 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      text-shadow:
+        0 0 6px #00e0d1,
+        0 0 12px #00e0d1,
+        0 0 18px #00e0d1;
+      color: #102c34;
+    }
+    50% {
+      text-shadow:
+        0 0 10px #008080,
+        0 0 20px #008080,
+        0 0 30px #008080;
+      color: #143d44;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #2f8a9d, #00d4ff, #007dbf, #00416a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite, fadeIn 1.5s ease-out forwards;
+    overflow: hidden;
+    color: white;
+    user-select: none;
+  }
+
+  .center-container {
+    text-align: center;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    background: rgba(255 255 255 / 0.1);
+    border-radius: 24px;
+    box-shadow:
+      0 0 30px rgba(0, 255, 234, 0.6),
+      inset 0 0 20px rgba(0, 255, 234, 0.3);
+    max-width: 400px;
+    width: 90vw;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: #102c34; /* Darker base */
+    animation: bounce 1s ease-in-out 1, glow 4s ease-in-out 1;
+    animation-fill-mode: forwards;
+    cursor: default;
+    user-select: none;
+  }
+
+  .play-button {
+    margin-top: 40px;
+    font-size: 2.5rem;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #00fff9, #00b3b3);
+    color: #002c30;
+    cursor: pointer;
+    box-shadow:
+      0 6px 15px rgba(0, 255, 234, 0.7),
+      inset 0 0 15px rgba(0, 255, 234, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+    font-weight: 700;
+  }
+
+  .play-button:hover {
+    background: linear-gradient(135deg, #00b3b3, #00fff9);
+    box-shadow:
+      0 10px 25px rgba(0, 255, 234, 1),
+      inset 0 0 20px rgba(0, 255, 234, 0.7);
+    transform: scale(1.1);
+  }
+
+  .play-button:active {
+    transform: scale(0.95);
+    box-shadow:
+      0 4px 10px rgba(0, 255, 234, 0.5),
+      inset 0 0 10px rgba(0, 255, 234, 0.4);
+  }
+
+  body {
+    cursor: url('https://cdn-icons-png.flaticon.com/512/25/25231.png'), auto;
+  }

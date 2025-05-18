@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dice Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="main-container">
+    <h1 id="mode-title">🎲 Dice Game</h1>
+
+    <div class="game-grid">
+
+      <div class="dice-box">
+        <img src="/games/dice/images/dice1.png" alt="Dice" id="dice" />
+        <p id="result">Click the dice to roll</p>
+      </div>
+
+      <div class="score-box">
+        <p id="score">Score: 0</p>
+        <p id="roll-count">Rolls: 0</p>
+        <button onclick="resetGame()">🔄 Reset</button>
+        <button onclick="goBack()">⬅️ Back</button>
+      </div>
+
+      <div class="history-box">
+        <h2>Last 5 Rolls</h2>
+        <ul id="history"></ul>
+      </div>
+
+      <div class="leaderboard-box" id="leaderboard-container">
+        <h2>🏆 Leaderboard</h2>
+        <ol id="leaderboard"></ol>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Vibes</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body class="home-page">
+  <div class="center-container">
+    <h1>🎮 Game Vibes</h1>
+    <button class="play-button" onclick="goToGames()">▶ Play</button>
+  </div>
+
+  <script>
+    function goToGames() {
+      // Optional: smooth fade out before redirect
+      document.body.style.transition = 'opacity 0.5s ease';
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = 'games.html';
+      }, 500);
+    }
+  </script>
+</body>
+</html>

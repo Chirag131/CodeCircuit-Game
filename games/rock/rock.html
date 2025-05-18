@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Rock Paper Scissors</h1>
+    <div class="game-layout">
+      <div class="scoreboard">
+        <h2>Score</h2>
+        <div id="score">Player: 0 | Computer: 0</div>
+      </div>
+      <div class="game-area">
+        <div class="buttons">
+          <button onclick="play('rock')"><div class="emoji">✊</div><div class="label">Rock</div></button>
+          <button onclick="play('paper')"><div class="emoji">✋</div><div class="label">Paper</div></button>
+          <button onclick="play('scissors')"><div class="emoji">✌️</div><div class="label">Scissors</div></button>
+        </div>
+        <div id="playerDisplay"></div>
+        <div id="computerDisplay"></div>
+        <p id="result" class="result-text">Make your move!</p>
+        <button id="resetBtn" onclick="resetGame()">Reset Game</button>
+        <p><small>Tip: Use keyboard keys R, P, S to play.</small></p>
+        <p><a href="rock_setup.html">⚙️ Change Settings</a></p>
+        
+      </div>
+      <div class="history-panel">
+        <h2>History</h2>
+        <ul id="historyList" class="history"></ul>
+      </div>
+    </div>
+        
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container fade-in">
+    <h1>Number Guessing Game</h1>
+    <p>Guess the number correctly in limited attempts based on the difficulty.</p>
+
+    <a href="../../games.html" class="back-button">← Back</a>
+
+    <h3>Select Difficulty:</h3>
+    <select id="difficulty">
+      <option value="50">Easy (1–50)</option>
+      <option value="100">Medium (1–100)</option>
+      <option value="500">Hard (1–500)</option>
+    </select>
+
+    <p class="rules">
+      <strong>Rules:</strong><br>
+      1. The number is randomly selected in the chosen range.<br>
+      2. You get limited attempts (10 for Easy, 7 for Medium, 5 for Hard).<br>
+      3. After each guess, hints will be shown.<br>
+    </p>
+
+    <button onclick="startGame()">Start Game</button>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+  </div>
+
+  <script>
+    function startGame() {
+      const difficulty = document.getElementById("difficulty").value;
+      localStorage.setItem("maxNumber", difficulty);
+      window.location.href = "number.html";
+    }
+
+    const toggleButton = document.getElementById("theme-toggle");
+    toggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    });
+
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
+</body>
+</html>
