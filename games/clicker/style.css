@@ -133,3 +133,21 @@ button:hover {
     font-size: 16px;
   }
 }
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .click-box {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 350px) {
+  .click-box {
+    font-size: 1.1rem;
+    padding: 0.6rem 1rem;
+    max-width: 200px;
+  }
+}
